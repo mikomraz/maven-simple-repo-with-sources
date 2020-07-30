@@ -25,6 +25,7 @@ jobs:
       - run: |-
           gcloud --quiet auth configure-docker
           docker run --publish 18200:8200 --detach gcr.io/$GCE_PROJECT/sast-engine:dev 
+          sleep 5
         env:
           GCE_PROJECT: ${{ secrets.GCE_PROJECT }}
 
